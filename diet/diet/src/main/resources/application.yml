@@ -1,0 +1,41 @@
+spring:
+  datasource:
+    url: jdbc:mysql://localhost:3306/langchain_diet?useSSL=false&serverTimezone=UTC
+    username: root
+    password: "1234"
+
+  jpa:
+    hibernate:
+      ddl-auto: 'update'
+    show-sql: true
+    properties:
+      hibernate:
+        format_sql: true
+        dialect: org.hibernate.dialect.MySQLDialect
+  ai:
+    openai:
+      api-key: "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"
+  http:
+    client:
+      factory: jdk
+
+langchain4j:
+  chat:
+    model:
+      provider: openai
+      api-key: sk-n9vxi4GlAnwj1OINoDK4O7DMh77HXmQrSROdruJ4AG5P5y7h
+      model-name: gpt-3.5-turbo
+      temperature: 0.7
+      max-tokens: 1000
+
+
+app:
+  jwt-secret: 404E635266556A586E3272357538782F413F4428472B4B6250645367566B5970
+  jwt-expiration-milliseconds: 86400000
+
+server:
+  port: 8081
+
+logging:
+  level:
+    org.springframework.security: DEBUG
